@@ -1,6 +1,5 @@
 import { z } from 'zod'
 
-// Create Payment DTO
 export const CreatePaymentDto = z.object({
   amount: z.number()
     .positive('El monto debe ser mayor a 0')
@@ -15,7 +14,6 @@ export const CreatePaymentDto = z.object({
 
 export type CreatePaymentDto = z.infer<typeof CreatePaymentDto>
 
-// Update Payment DTO
 export const UpdatePaymentDto = z.object({
   amount: z.number()
     .positive('El monto debe ser mayor a 0')
@@ -29,7 +27,6 @@ export const UpdatePaymentDto = z.object({
 
 export type UpdatePaymentDto = z.infer<typeof UpdatePaymentDto>
 
-// Payment Response DTO
 export const PaymentResponseDto = z.object({
   id: z.string(),
   amount: z.number(),
@@ -46,7 +43,6 @@ export const PaymentResponseDto = z.object({
 
 export type PaymentResponseDto = z.infer<typeof PaymentResponseDto>
 
-// Payment Statistics DTO
 export const PaymentStatisticsDto = z.object({
   totalPayments: z.number(),
   totalAmount: z.number(),

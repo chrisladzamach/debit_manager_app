@@ -11,10 +11,6 @@ export class PaymentController {
     this.paymentService = new PaymentService(dataSource)
   }
 
-  /**
-   * GET /api/payments
-   * Get all payments
-   */
   async getAllPayments(req: Request, res: Response): Promise<void> {
     try {
       const payments = await this.paymentService.getAllPayments()
@@ -32,10 +28,6 @@ export class PaymentController {
     }
   }
 
-  /**
-   * GET /api/payments/:id
-   * Get payment by ID
-   */
   async getPaymentById(req: Request, res: Response): Promise<void> {
     try {
       const { id } = req.params
@@ -63,10 +55,6 @@ export class PaymentController {
     }
   }
 
-  /**
-   * GET /api/payments/debt/:debtId
-   * Get payments by debt ID
-   */
   async getPaymentsByDebtId(req: Request, res: Response): Promise<void> {
     try {
       const { debtId } = req.params
@@ -94,10 +82,6 @@ export class PaymentController {
     }
   }
 
-  /**
-   * DELETE /api/payments/:id
-   * Delete a payment
-   */
   async deletePayment(req: Request, res: Response): Promise<void> {
     try {
       const { id } = req.params
@@ -124,10 +108,6 @@ export class PaymentController {
     }
   }
 
-  /**
-   * GET /api/payments/statistics
-   * Get payment statistics
-   */
   async getStatistics(req: Request, res: Response): Promise<void> {
     try {
       const statistics = await this.paymentService.getPaymentStatistics()
@@ -146,10 +126,6 @@ export class PaymentController {
     }
   }
 
-  /**
-   * GET /api/payments/recent?limit=10
-   * Get recent payments
-   */
   async getRecentPayments(req: Request, res: Response): Promise<void> {
     try {
       const limit = parseInt(req.query.limit as string) || 10
@@ -178,10 +154,6 @@ export class PaymentController {
     }
   }
 
-  /**
-   * GET /api/payments/date-range?start=2024-01-01&end=2024-12-31
-   * Get payments within date range
-   */
   async getPaymentsByDateRange(req: Request, res: Response): Promise<void> {
     try {
       const { start, end } = req.query
@@ -229,10 +201,6 @@ export class PaymentController {
     }
   }
 
-  /**
-   * GET /api/payments/amount-range?min=100&max=1000
-   * Get payments by amount range
-   */
   async getPaymentsByAmountRange(req: Request, res: Response): Promise<void> {
     try {
       const { min, max } = req.query

@@ -7,9 +7,6 @@ export class PaymentRepository extends BaseRepository<Payment> {
     super(repository)
   }
 
-  /**
-   * Find all payments with debt information
-   */
   async findAllWithDebt(): Promise<Payment[]> {
     return this.repository.find({
       relations: ['debt'],
@@ -17,9 +14,6 @@ export class PaymentRepository extends BaseRepository<Payment> {
     })
   }
 
-  /**
-   * Find payments by debt ID
-   */
   async findByDebtId(debtId: string): Promise<Payment[]> {
     return this.repository.find({
       where: { debtId },
@@ -27,9 +21,6 @@ export class PaymentRepository extends BaseRepository<Payment> {
     })
   }
 
-  /**
-   * Find payment by ID with debt information
-   */
   async findByIdWithDebt(id: string): Promise<Payment | null> {
     return this.repository.findOne({
       where: { id },

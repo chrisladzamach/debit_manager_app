@@ -34,17 +34,14 @@ export class Debt {
   @OneToMany(() => Payment, payment => payment.debt, { cascade: true })
   payments: Payment[]
 
-  // Computed property to check if debt is fully paid
   get isFullyPaid(): boolean {
     return this.remainingAmount <= 0
   }
 
-  // Computed property to get total paid amount
   get totalPaid(): number {
     return this.initialAmount - this.remainingAmount
   }
 
-  // Computed property to get progress percentage
   get progressPercentage(): number {
     if (this.initialAmount === 0) return 0
     return ((this.initialAmount - this.remainingAmount) / this.initialAmount) * 100

@@ -11,11 +11,6 @@ export class DebtController {
   constructor(dataSource: DataSource) {
     this.debtService = new DebtService(dataSource)
   }
-
-  /**
-   * GET /api/debts
-   * Get all debts
-   */
   async getAllDebts(req: Request, res: Response): Promise<void> {
     try {
       const debts = await this.debtService.getAllDebts()
@@ -33,10 +28,6 @@ export class DebtController {
     }
   }
 
-  /**
-   * GET /api/debts/:id
-   * Get debt by ID
-   */
   async getDebtById(req: Request, res: Response): Promise<void> {
     try {
       const { id } = req.params
@@ -64,10 +55,6 @@ export class DebtController {
     }
   }
 
-  /**
-   * POST /api/debts
-   * Create a new debt
-   */
   async createDebt(req: Request, res: Response): Promise<void> {
     try {
       const createDebtDto: CreateDebtDto = req.body
@@ -95,10 +82,6 @@ export class DebtController {
     }
   }
 
-  /**
-   * PUT /api/debts/:id
-   * Update an existing debt
-   */
   async updateDebt(req: Request, res: Response): Promise<void> {
     try {
       const { id } = req.params
@@ -132,10 +115,6 @@ export class DebtController {
     }
   }
 
-  /**
-   * DELETE /api/debts/:id
-   * Delete a debt
-   */
   async deleteDebt(req: Request, res: Response): Promise<void> {
     try {
       const { id } = req.params
@@ -167,10 +146,6 @@ export class DebtController {
     }
   }
 
-  /**
-   * POST /api/debts/:id/payments
-   * Add payment to debt
-   */
   async addPayment(req: Request, res: Response): Promise<void> {
     try {
       const { id } = req.params
@@ -204,10 +179,6 @@ export class DebtController {
     }
   }
 
-  /**
-   * GET /api/debts/statistics
-   * Get debt statistics
-   */
   async getStatistics(req: Request, res: Response): Promise<void> {
     try {
       const statistics = await this.debtService.getDebtStatistics()
@@ -226,10 +197,6 @@ export class DebtController {
     }
   }
 
-  /**
-   * GET /api/debts/search?q=query
-   * Search debts by description
-   */
   async searchDebts(req: Request, res: Response): Promise<void> {
     try {
       const { q } = req.query
@@ -258,10 +225,6 @@ export class DebtController {
     }
   }
 
-  /**
-   * GET /api/debts/status/:status
-   * Get debts by status (paid/active)
-   */
   async getDebtsByStatus(req: Request, res: Response): Promise<void> {
     try {
       const { status } = req.params
