@@ -1,10 +1,5 @@
-/**
- * Custom hook for modal state management
- * Manages all modal-related state and operations
- */
-
 import { useState, useCallback } from 'react'
-import { ModalState } from '@/types'
+import { ModalState } from '../types'
 
 export function useModalManager() {
   const [modalState, setModalState] = useState<ModalState>({

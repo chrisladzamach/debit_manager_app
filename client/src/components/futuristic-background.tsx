@@ -1,14 +1,6 @@
-/**
- * Futuristic background component
- * Provides animated background effects for the application
- */
-
-import React from 'react'
-
 export const FuturisticBackground = () => {
   return (
     <>
-      {/* Enhanced futuristic background with moving elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-transparent to-blue-500/20" />
         <div
@@ -37,7 +29,6 @@ export const FuturisticBackground = () => {
         </div>
       </div>
 
-      {/* Animated border lines */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent animate-pulse" />
         <div

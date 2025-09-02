@@ -1,12 +1,7 @@
-/**
- * Custom hook for debt management
- * Manages all debt-related state and operations
- */
-
 import { useState, useCallback } from 'react'
-import { Debt } from '@/types'
-import { DebtService } from '@/services/debt-service'
-import { SampleDataService } from '@/services/sample-data-service'
+import { Debt } from '../types'
+import { DebtService } from '../services/debt-service'
+import { SampleDataService } from '../services/sample-data-service'
 
 export function useDebtManager() {
   const [debts, setDebts] = useState<Debt[]>(SampleDataService.getSampleDebts())
@@ -30,7 +25,6 @@ export function useDebtManager() {
 
   const removeDebt = useCallback((debtId: string) => {
     setDebts(prevDebts => DebtService.removeDebt(prevDebts, debtId))
-    // Clear selection if removed debt was selected
     if (selectedDebt?.id === debtId) {
       setSelectedDebt(null)
     }

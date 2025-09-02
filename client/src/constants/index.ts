@@ -1,8 +1,4 @@
-/**
- * Application constants and configuration
- */
-
-import { CurrencyFormatOptions } from '@/types'
+import { CurrencyFormatOptions } from '../types'
 
 // Currency configuration
 export const CURRENCY_CONFIG: CurrencyFormatOptions = {

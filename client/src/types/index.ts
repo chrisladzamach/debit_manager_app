@@ -1,7 +1,3 @@
-/**
- * Core types for the Debt Manager application
- */
-
 export interface Payment {
   id: string
   amount: number

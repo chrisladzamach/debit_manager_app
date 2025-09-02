@@ -1,7 +1,7 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { Debt, Payment, DebtStatistics, PaymentStatistics } from '@/types'
-import { CURRENCY_CONFIG } from '@/constants'
+import { Debt, Payment, DebtStatistics, PaymentStatistics } from '../types'
+import { CURRENCY_CONFIG } from '../constants'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))

@@ -1,15 +1,7 @@
-/**
- * Debt management service
- * Contains all business logic related to debt operations
- */
-
-import { Debt, Payment } from '@/types'
-import { generateId } from '@/lib/utils'
+import { Debt, Payment } from '../types'
+import { generateId } from '../lib/utils'
 
 export class DebtService {
-  /**
-   * Create a new debt
-   */
   static createDebt(name: string, amount: number): Debt {
     return {
       id: generateId(),

@@ -1,10 +1,5 @@
-/**
- * Custom hook for application state management
- * Manages loading states and system time
- */
-
 import { useState, useEffect } from 'react'
-import { TIMING } from '@/constants'
+import { TIMING } from '../constants'
 
 export function useAppState() {
   const [isLoading, setIsLoading] = useState(true)

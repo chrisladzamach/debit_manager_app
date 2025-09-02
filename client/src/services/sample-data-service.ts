@@ -1,14 +1,6 @@
-/**
- * Sample data service
- * Provides initial sample data for the application
- */
-
-import { Debt } from '@/types'
+import { Debt } from '../types'
 
 export class SampleDataService {
-  /**
-   * Get initial sample debts for development/demo
-   */
   static getSampleDebts(): Debt[] {
     return [
       {

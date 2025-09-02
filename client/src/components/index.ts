@@ -1,8 +1,3 @@
-/**
- * Central export file for all components
- * Facilitates organized imports throughout the application
- */
-
 // Core components
 export { DebtCard } from './debt-card'
 export { AddDebtModal } from './add-debt-modal'

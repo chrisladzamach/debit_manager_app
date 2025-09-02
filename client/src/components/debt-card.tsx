@@ -1,10 +1,10 @@
 import React from "react"
-import { Card } from "@/components/ui/card"
+import { Card } from "../components/ui/card"
 import { History, CreditCard, Trash2 } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Debt } from "@/types"
-import { calculateProgressPercentage, formatDate, formatCurrency } from "@/lib/utils"
-import { STATUS } from "@/constants"
+import { Button } from "../components/ui/button"
+import { Debt } from "../types"
+import { calculateProgressPercentage, formatDate, formatCurrency } from "../lib/utils"
+import { STATUS } from "../constants"
 
 interface DebtCardProps {
   debt: Debt
@@ -62,7 +62,7 @@ export const DebtCard = ({ debt, onPayment, onHistory, onRemove }: DebtCardProps
                 onClick={handleHistoryClick}
                 variant="ghost"
                 size="sm"
-                className="w-8 h-8 p-0 text-cyan-400 hover:text-cyan-300 hover:bg-cyan-500/20"
+                className="w-8 h-8 p-0 text-cyan-400 hover:text-cyan-300 hover:bg-cyan-500/20 cursor-pointer"
               >
                 <History className="w-4 h-4" />
               </Button>
@@ -71,7 +71,7 @@ export const DebtCard = ({ debt, onPayment, onHistory, onRemove }: DebtCardProps
               onClick={handleRemoveClick}
               variant="ghost"
               size="sm"
-              className="w-8 h-8 p-0 text-red-400 hover:text-red-300 hover:bg-red-500/20"
+              className="w-8 h-8 p-0 text-red-400 hover:text-red-300 hover:bg-red-500/20 cursor-pointer"
             >
               <Trash2 className="w-4 h-4" />
             </Button>
@@ -113,7 +113,7 @@ export const DebtCard = ({ debt, onPayment, onHistory, onRemove }: DebtCardProps
             {!isFullyPaid && (
               <Button
                 onClick={handlePaymentClick}
-                className="flex-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-300 font-mono text-sm"
+                className="cursor-pointer flex-1 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-semibold px-4 lg:px-6 py-2 lg:py-3 rounded-lg transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-400/40 hover:scale-105"
               >
                 <CreditCard className="w-4 h-4 mr-2" />
                 PAGAR
@@ -123,7 +123,7 @@ export const DebtCard = ({ debt, onPayment, onHistory, onRemove }: DebtCardProps
               <Button
                 onClick={handleHistoryClick}
                 variant="outline"
-                className="flex-1 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/20 font-mono text-sm"
+                className="cursor-pointer flex-1 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/20 font-mono text-sm"
               >
                 <History className="w-4 h-4 mr-2" />
                 HISTORIAL
